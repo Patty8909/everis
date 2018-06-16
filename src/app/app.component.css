@@ -1,0 +1,16 @@
+.logo-everis {
+  width: 90px;
+}
+.btn-conoce {
+  background-color: #9AAE04;
+  border: none;
+}
+.style-proy {
+  cursor: pointer;
+}
+.style-proy:hover {
+  color: black;
+}
+.style-list:hover {
+  background-color: #9AAE04;
+}

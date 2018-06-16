@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#"></a>
+  <img src="https://www.everis.com/sites/all/themes/everis/logo.png" class="logo-everis" alt="">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Nuevo Proyecto" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Añadir</button>
+    </form>
+  </div>
+</nav>
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h2 class="display-3">Bienvenido</h2>
+      <p>Esta es la plataforma donde podrás encontrar información detallada de tus proyectos, tus compañeros de trabajo y conocer más del cliente, como los convenios y beneficios de los que formarás parte.</p>
+      <p><a class="btn btn-primary btn-lg btn-conoce" href="#" role="button">Conoce más &raquo;</a></p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <h3>Mis proyectos</h3>
+    </div>
+  </div>
+  
+  <div class="container">
+    <!-- Example row of columns -->
+    <div *ngIf="undefined !== restItems">
+      <div  class="row">
+        
+          <ul class="col-md-4 list-group style-proy">
+            <li class="list-group-item style-list"  *ngFor="let post of restItems.proyects" [innerHTML]="post.proyectName"
+                (click)="selectedContent='<h1>' + post.companyName + '</h1>' + '<p>' + post.contactEmail
+                + '</p>' + '<p>' + post.contactName + '</p>' + '<p>' +  post.description + '</p>' + '<p>' + post.everisLine + '</p>' + 
+                '<p>' + post.methodology + '</p>' + '<p>' + post.location + '</p>'">
+            </li>
+          </ul>
+          <div [innerHTML]="selectedContent" class="col-md-8"></div>
+      </div>    
+    </div>
+  </div> <!-- /container -->
+
+</main>
+
+
+
